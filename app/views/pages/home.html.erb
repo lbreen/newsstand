@@ -1,2 +1,23 @@
-<h1>Newsstand</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Newsstand</h1>
+    </div>
+  </div>
+  <% @articles.each do |outlet, articles| %>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2><%= outlet %></h2>
+      </div>
+      <% articles.each do |index, data| %>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <p><strong>Title:</strong> <%= data['title']%></p>
+          <p><strong>Subtitle:</strong> <%= data['subtitle']%></p>
+          <p><strong>Category:</strong> <%= data['category']%></p>
+          <p><strong>Url:</strong> <%= data['url']%></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
