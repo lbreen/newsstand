@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+sky_news = Outlet.create(name: 'Sky News', url: 'https://news.sky.com', article_css_tag: '.sdc-news-story-grid__headline')
+the_times = Outlet.create(name: 'The Times', url: 'https://www.thetimes.co.uk', article_css_tag: '.Item-headline', category_css_tag: '.Section-title')
+
+
+Article.create(title: 'UK votes to leave EU', subtitle: "UK votes 51\% in favour of leaving the EU", category: 'Politics', outlet: sky_news, time_published: Time.now)
